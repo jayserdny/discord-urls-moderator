@@ -24,10 +24,12 @@ const excludedUsers = ['400608746507862017']
 // Id of the bot
 const botId = '400608746507862017';
 
+// Listen to the ready event of the bot
 client.on('ready', function (evt) {
     logger.info('Connected');
 });
 
+// Listen to messages event
 client.on('message', message => {
 
     var sender = message.author;
