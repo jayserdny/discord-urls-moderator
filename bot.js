@@ -37,6 +37,7 @@ client.on('message', message => {
 
     // Check if the sender id is in the excluded list
     if (sender.id.indexOf(excludedUsers) > -1) {
+        logger.info('Sender is in the excluded list');
         return; // return to avoid deleting the messages of allowed users
     }
 
@@ -48,9 +49,9 @@ client.on('message', message => {
 
             logger.info('Steemit link detected');
             message.delete();
-            logger.info("Message deleted");
-            message.author.send(sender + ", This kind of url is not allowed here. Instead, use Utopian links. Thanks 🙃");
-            logger.warn("Author was informed");
+            logger.info('Message deleted');
+            message.author.send(sender + ', This kind of url is not allowed here. Instead, use Utopian links. Thanks 🙃');
+            logger.warn('Author was informed');
         }
     }
 
